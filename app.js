@@ -21,6 +21,10 @@ app.use(
   })
 );
 
+app.get('/', (req, res) => {
+  res.send('Hello World!', `${process.env.FRONTEND_URL_ONE}   ${process.env.FRONTEND_URL_TWO}`)
+})
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
